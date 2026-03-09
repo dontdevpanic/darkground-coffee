@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Darkground Coffee – DevPanicZone</title>
+        <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <meta name="description" content="CSS Animations Showcase – Endless Section Loop, vanilla HTML/CSS/JS">
+        <meta name="author" content="Bianca | DontDevPanic">
+        <meta name="robots" content="index, follow">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <!-- INTRO -->
+        <div id="intro" aria-hidden="true">
+            <div class="reveal-sequence intro-sequence">
+                <span class="reveal-word">Coffee</span>
+                <span class="reveal-word">Roast</span>
+                <span class="reveal-word">Enjoy</span>
+                <span class="reveal-word">Repeat</span>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <main id="main-content">
+
+            <!-- HERO - 100vh, endless loop anchor -->
+            <section id="hero" class="hero">
+                <h1 class="visually-hidden">Darkground Coffee Roasters</h1>
+
+                <span class="hero-brand" aria-hidden="true">Darkground</span>
+
+                <div class="hero-center">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg class="hero-svg" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 100 245">
+                        <defs>
+                            <style>
+                                .cls-2 {
+                                    fill: currentColor;
+                                }
+
+                                /* Dampf: alle drei Paths teilen die Animation, versetzt */
+                                .steam-path {
+                                    fill: currentColor;
+                                    transform-origin: center bottom;
+                                }
+
+                                .steam-path:nth-child(1) {
+                                    animation: steamFloat 2.8s ease-in-out infinite;
+                                    animation-delay: 0s;
+                                }
+
+                                .steam-path:nth-child(2) {
+                                    animation: steamFloat 2.8s ease-in-out infinite;
+                                    animation-delay: 0.6s;
+                                }
+
+                                .steam-path:nth-child(3) {
+                                    animation: steamFloat 2.8s ease-in-out infinite;
+                                    animation-delay: 1.2s;
+                                }
+
+                                @keyframes steamFloat {
+                                    0% {
+                                        opacity: 0;
+                                        transform: translateY(0) scaleX(1);
+                                    }
+
+                                    20% {
+                                        opacity: 1;
+                                    }
+
+                                    80% {
+                                        opacity: 0.4;
+                                    }
+
+                                    100% {
+                                        opacity: 0;
+                                        transform: translateY(-18px) scaleX(0.7);
+                                    }
+                                }
+
+                                @media (prefers-reduced-motion: reduce) {
+                                    .steam-path {
+                                        animation: none;
+                                        opacity: 0.7;
+                                    }
+                                }
+                            </style>
+                        </defs>
+
+                        <!-- Bohne -->
+                        <g id="_6Aszwu.tif" data-name="6Aszwu.tif">
+                            <g>
+                                <path class="cls-2"
+                                    d="M83.65,227.41c-6.07,7.24-13.14,12.74-22.05,14.97-.91.23-2.94-.9-3.47-1.67-.68-.98-.94-2.9-.56-4.36,4.93-18.99,3.49-38-3.5-56.25-6.99-18.25-7.41-37.56-1.63-55.92.44-1.39,2.06-4.7,3.74-4.58,11.45.76,21.17,6.82,28.45,15.52,19.6,23.47,19.07,68.38-.97,92.31Z" />
+                                <path class="cls-2"
+                                    d="M41.94,243.92c-15.02-2.52-26.6-12.4-33.25-25.68C-6.61,187.72.12,135.78,36.12,121.63c1.24-.49,3.77-.37,4.77.16,1.14.61,1.97,3.38,1.56,5.01-4.68,18.75-3.77,37.86,3.19,56.09,7.15,18.7,7.94,38.41,1.55,57.49-.69,2.05-2.23,4.05-5.25,3.54Z" />
+                            </g>
+                        </g>
+
+                        <!-- Dampf / Duft -->
+                        <g class="steam-group">
+                            <path class="steam-path"
+                                d="M16,98.32s3.88-6.19,3.09-10.22c-2.83-14.45-14.58-27.31-10.94-43.26,2.4-10.49,8.7-11.96,8.7-11.96,0,0-1.93,6.16-1.74,10.64.57,13.43,13.62,28.73,10.89,44.06-1.93,10.82-10,10.74-10,10.74Z" />
+                            <path class="steam-path"
+                                d="M72.42,94.69s5.53-4.77,5.97-8.86c1.56-14.64-5.88-30.39,2.31-44.57,5.38-9.31,11.84-8.86,11.84-8.86,0,0-3.67,5.32-4.8,9.66-3.41,13,4.55,31.46-2.59,45.31-5.03,9.77-12.72,7.32-12.72,7.32Z" />
+                            <path class="steam-path"
+                                d="M43.74,91.32s5.32-8.24,4.98-13.87c-1.22-20.19-12.92-38.88-6.5-60.62C46.43,2.53,53.87,1,53.87,1c0,0-3.08,8.35-3.49,14.56-1.22,18.59,11.62,40.76,6.34,61.72-3.72,14.79-12.98,14.04-12.98,14.04Z" />
+                        </g>
+                    </svg>
+                    <!-- <svg class="hero-svg" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                        focusable="false">
+                        <ellipse cx="60" cy="90" rx="38" ry="56" fill="none" stroke="currentColor" stroke-width="2.5" />
+                        <path d="M60 36 C40 60 40 120 60 144" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line class="steam" x1="60" y1="28" x2="60" y2="14" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line class="steam steam--2" x1="50" y1="26" x2="45" y2="12" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                        <line class="steam steam--3" x1="70" y1="26" x2="75" y2="12" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" />
+                    </svg> -->
+                    <p class="hero-tagline">Hand-roasted since 1987</p>
+                </div>
+            </section>
+
+            <!-- SECTION: ABOUT -->
+            <!-- <section id="about" class="section section--dark">
+                <div class="section-inner">
+                    <h2 class="reveal">About Us</h2>
+                    <p class="reveal body-text">
+                        We roast in small batches, with plenty of time and even more patience.
+                        Every bean travels far before it finds its way into your cup.
+                        Darkground - coffee without compromise.
+                    </p>
+                </div>
+            </section> -->
+
+            <section id="about" class="section-full section--dark">
+                <div class="about-layout">
+
+                    <div class="about-image">
+                        <img src="img/roastery-generated.png"
+                            alt="Coffee beans being roasted in a traditional roastery">
+                    </div>
+
+                    <div class="section-inner">
+                        <h2 class="reveal">About Us</h2>
+                        <p class="reveal body-text">
+                            We roast in small batches, with plenty of time and even more patience.
+                            Every bean travels far before it finds its way into your cup.
+                            Darkground - coffee without compromise.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- INLINE NAV -->
+            <nav class="inline-nav" aria-label="Page navigation">
+                <a href="#hero">Top</a>
+                <a href="#about">About</a>
+                <a href="#origin">Origin</a>
+                <a href="#roasts">Roasts</a>
+                <a href="#visit">Visit</a>
+                <a href="#menu">Menu</a>
+            </nav>
+
+            <!-- SECTION: HERKUNFT (Ticker) -->
+            <section id="origin" class="section section--accent">
+                <div class="ticker-wrap" aria-hidden="true">
+                    <div class="ticker">
+                        <div class="ticker-group">
+                            <span class="ticker-item">Ethiopia</span>
+                            <span class="ticker-item sep">·</span>
+                            <span class="ticker-item">Colombia</span>
+                            <span class="ticker-item sep">·</span>
+                            <span class="ticker-item">Sumatra</span>
+                            <span class="ticker-item sep">·</span>
+                            <span class="ticker-item">Guatemala</span>
+                            <span class="ticker-item sep">·</span>
+                        </div>
+                        <div class="ticker-group" aria-hidden="true">
+                            <span class="ticker-item">Ethiopia</span>
+                            <span class="ticker-item sep">·</span>
+                            <span class="ticker-item">Colombia</span>
+                            <span class="ticker-item sep">·</span>
+                            <span class="ticker-item">Sumatra</span>
+                            <span class="ticker-item sep">·</span>
+                            <span class="ticker-item">Guatemala</span>
+                            <span class="ticker-item sep">·</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="visually-hidden">Ethiopia, Colombia, Sumatra, Guatemala</p>
+                <div class="section-inner section-inner--pad-top">
+                    <p class="reveal body-text">
+                        Our beans come directly from small-scale farmers. No middlemen,
+                        no long supply chains - just honest coffee with a story.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION: ROASTS (Stagger words) -->
+            <section id="roasts" class="section section--mid">
+                <div class="section-inner">
+                    <div class="stagger-sequence" aria-hidden="true">
+                        <span class="stagger-item">Light.</span>
+                        <span class="stagger-item">Medium.</span>
+                        <span class="stagger-item">Dark.</span>
+                        <span class="stagger-item">Espresso.</span>
+                    </div>
+                    <p class="visually-hidden">Light, Medium, Dark, Espresso</p>
+                    <p class="reveal body-text body-text--center">
+                        Four roast levels. Each with its own character.
+                        From floral and fruity to deep and chocolatey.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION: VISIT -->
+            <!-- <section id="visit" class="section section--dark section--overflow-hidden">
+                <div class="section-inner">
+                    <div class="slide-in-wrap" aria-hidden="true">
+                        <span class="slide-in-left">Come</span>
+                        <span class="slide-in-right">by.</span>
+                        <span class="slide-in-left">Smell</span>
+                        <span class="slide-in-right">it yourself.</span>
+                    </div>
+                    <p class="visually-hidden">Come by. Smell it yourself.</p>
+                    <p class="reveal body-text">
+                        Our roastery is open for visits every Saturday from 10 am to 2 pm.
+                        Coffee straight from the roaster, fresh and unpackaged.
+                    </p>
+                </div>
+            </section> -->
+
+            <section id="visit" class="section-full section--dark section--overflow-hidden">
+                <div class="visit-layout">
+
+                    <div class="section-inner">
+                        <div class="slide-in-wrap" aria-hidden="true">
+                            <span class="slide-in-left">Come</span>
+                            <span class="slide-in-right">by.</span>
+                            <span class="slide-in-left">Smell</span>
+                            <span class="slide-in-right">it yourself.</span>
+                        </div>
+                        <p class="visually-hidden">Come by. Smell it yourself.</p>
+                        <p class="reveal body-text">
+                            Our roastery is open for visits every Saturday from 10 am to 2 pm.
+                            Coffee straight from the roaster, fresh and unpackaged.
+                        </p>
+                    </div>
+
+                    <div class="visit-image">
+                        <img src="img/roastery-outside-generated.png" alt="Outside view of the Darkground roastery">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- INLINE NAV -->
+            <nav class="inline-nav" aria-label="Page navigation">
+                <a href="#hero">Top</a>
+                <a href="#about">About</a>
+                <a href="#origin">Origin</a>
+                <a href="#roasts">Roasts</a>
+                <a href="#visit">Visit</a>
+                <a href="#menu">Menu</a>
+            </nav>
+
+            <!-- SECTION: MENU (Typewriter) -->
+            <section id="menu" class="section section--accent">
+                <div class="section-inner">
+                    <div class="typewriter-wrap" aria-hidden="true">
+                        <span class="typewriter tw-1">Espresso</span>
+                        <span class="typewriter tw-2">Filter Coffee</span>
+                        <span class="typewriter tw-3">Cold Brew</span>
+                    </div>
+                    <p class="visually-hidden">Espresso, Filter Coffee, Cold Brew</p>
+                    <p class="reveal body-text body-text--center">
+                        Our house menu - simple, seasonal, from our own roast.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER - fixed, always on top -->
+        <footer class="footer">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="https://github.com/dontdevpanic" target="_blank" rel="noopener">GitHub Profile</a>
+                <a href="#" target="_blank" rel="noopener">GitHub Repo</a>
+            </nav>
+        </footer>
+
+        <script src="js/main.js"></script>
+
+    </body>
+
+</html>
