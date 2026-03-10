@@ -7,7 +7,8 @@
         <title>Darkground Coffee – DevPanicZone</title>
         <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <meta name="description" content="CSS Animations Showcase – Endless Section Loop, vanilla HTML/CSS/JS">
+        <meta name="description"
+            content="Darkground Coffee Roasters | Implementation Sample of CSS animations and endless section loop scfrolling">
         <meta name="author" content="Bianca | DontDevPanic">
         <meta name="robots" content="index, follow">
         <link rel="stylesheet" href="css/style.css">
@@ -30,12 +31,7 @@
 
             <!-- HERO - 100vh, endless loop anchor -->
             <section id="hero" class="hero">
-                <h1 class="visually-hidden">Darkground Coffee Roasters</h1>
-
-                <span class="hero-brand" aria-hidden="true">Darkground</span>
-
                 <div class="hero-center">
-                    <?xml version="1.0" encoding="UTF-8"?>
                     <svg class="hero-svg" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 100 245">
                         <defs>
@@ -94,7 +90,7 @@
                             </style>
                         </defs>
 
-                        <!-- Bohne -->
+                        <!-- Bean -->
                         <g id="_6Aszwu.tif" data-name="6Aszwu.tif">
                             <g>
                                 <path class="cls-2"
@@ -104,7 +100,7 @@
                             </g>
                         </g>
 
-                        <!-- Dampf / Duft -->
+                        <!-- Steam -->
                         <g class="steam-group">
                             <path class="steam-path"
                                 d="M16,98.32s3.88-6.19,3.09-10.22c-2.83-14.45-14.58-27.31-10.94-43.26,2.4-10.49,8.7-11.96,8.7-11.96,0,0-1.93,6.16-1.74,10.64.57,13.43,13.62,28.73,10.89,44.06-1.93,10.82-10,10.74-10,10.74Z" />
@@ -114,38 +110,17 @@
                                 d="M43.74,91.32s5.32-8.24,4.98-13.87c-1.22-20.19-12.92-38.88-6.5-60.62C46.43,2.53,53.87,1,53.87,1c0,0-3.08,8.35-3.49,14.56-1.22,18.59,11.62,40.76,6.34,61.72-3.72,14.79-12.98,14.04-12.98,14.04Z" />
                         </g>
                     </svg>
-                    <!-- <svg class="hero-svg" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        focusable="false">
-                        <ellipse cx="60" cy="90" rx="38" ry="56" fill="none" stroke="currentColor" stroke-width="2.5" />
-                        <path d="M60 36 C40 60 40 120 60 144" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" />
-                        <line class="steam" x1="60" y1="28" x2="60" y2="14" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" />
-                        <line class="steam steam--2" x1="50" y1="26" x2="45" y2="12" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" />
-                        <line class="steam steam--3" x1="70" y1="26" x2="75" y2="12" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" />
-                    </svg> -->
+                    <h1 class="hero-title">Darkground Coffee Roasters</h1>
+                    <span class="hero-brand" aria-hidden="true">Darkground</span>
                     <p class="hero-tagline">Hand-roasted since 1987</p>
                 </div>
             </section>
 
-            <!-- SECTION: ABOUT -->
-            <!-- <section id="about" class="section section--dark">
-                <div class="section-inner">
-                    <h2 class="reveal">About Us</h2>
-                    <p class="reveal body-text">
-                        We roast in small batches, with plenty of time and even more patience.
-                        Every bean travels far before it finds its way into your cup.
-                        Darkground - coffee without compromise.
-                    </p>
-                </div>
-            </section> -->
-
+            <!-- SECTION ABOUT (Reveal) -->
             <section id="about" class="section-full section--dark">
-                <div class="about-layout">
+                <div class="split-layout">
 
-                    <div class="about-image">
+                    <div class="split-media">
                         <img src="img/roastery-generated.png"
                             alt="Coffee beans being roasted in a traditional roastery">
                     </div>
@@ -170,9 +145,10 @@
                 <a href="#roasts">Roasts</a>
                 <a href="#visit">Visit</a>
                 <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
             </nav>
 
-            <!-- SECTION: HERKUNFT (Ticker) -->
+            <!-- SECTION ORIGIN (Ticker) -->
             <section id="origin" class="section section--accent">
                 <div class="ticker-wrap" aria-hidden="true">
                     <div class="ticker">
@@ -207,7 +183,23 @@
                 </div>
             </section>
 
-            <!-- SECTION: ROASTS (Stagger words) -->
+            <!-- INLINE BRAND -->
+            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
+                <a href="#hero" class="brand-link">
+                    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
+                        aria-hidden="true" focusable="false">
+                        <path
+                            d="M15.04,19.62c-1.1,1.32-2.39,2.32-4.01,2.72-.17.04-.53-.16-.63-.3-.12-.18-.17-.53-.1-.79.9-3.46.64-6.92-.64-10.24s-1.35-6.83-.3-10.18c.08-.25.37-.85.68-.83,2.08.14,3.85,1.24,5.18,2.83,3.57,4.27,3.47,12.44-.18,16.8Z"
+                            fill="currentColor" />
+                        <path
+                            d="M7.45,22.63c-2.73-.46-4.84-2.26-6.05-4.67C-1.38,12.4-.16,2.95,6.39.37c.23-.09.69-.07.87.03.21.11.36.61.28.91-.85,3.41-.69,6.89.58,10.21,1.3,3.4,1.44,6.99.28,10.46-.12.37-.41.74-.96.65Z"
+                            fill="currentColor" />
+                    </svg>
+                    Darkground Coffee Roasters
+                </a>
+            </nav>
+
+            <!-- SECTION ROASTS (Stagger words) -->
             <section id="roasts" class="section section--mid">
                 <div class="section-inner">
                     <div class="stagger-sequence" aria-hidden="true">
@@ -224,32 +216,16 @@
                 </div>
             </section>
 
-            <!-- SECTION: VISIT -->
-            <!-- <section id="visit" class="section section--dark section--overflow-hidden">
-                <div class="section-inner">
-                    <div class="slide-in-wrap" aria-hidden="true">
-                        <span class="slide-in-left">Come</span>
-                        <span class="slide-in-right">by.</span>
-                        <span class="slide-in-left">Smell</span>
-                        <span class="slide-in-right">it yourself.</span>
-                    </div>
-                    <p class="visually-hidden">Come by. Smell it yourself.</p>
-                    <p class="reveal body-text">
-                        Our roastery is open for visits every Saturday from 10 am to 2 pm.
-                        Coffee straight from the roaster, fresh and unpackaged.
-                    </p>
-                </div>
-            </section> -->
-
+            <!-- SECTION VISIT -->
             <section id="visit" class="section-full section--dark section--overflow-hidden">
-                <div class="visit-layout">
+                <div class="split-layout split-layout--reverse">
 
                     <div class="section-inner">
                         <div class="slide-in-wrap" aria-hidden="true">
                             <span class="slide-in-left">Come</span>
                             <span class="slide-in-right">by.</span>
-                            <span class="slide-in-left">Smell</span>
-                            <span class="slide-in-right">it yourself.</span>
+                            <span class="slide-in-left">Smell it</span>
+                            <span class="slide-in-right">yourself.</span>
                         </div>
                         <p class="visually-hidden">Come by. Smell it yourself.</p>
                         <p class="reveal body-text">
@@ -258,7 +234,7 @@
                         </p>
                     </div>
 
-                    <div class="visit-image">
+                    <div class="split-media">
                         <img src="img/roastery-outside-generated.png" alt="Outside view of the Darkground roastery">
                     </div>
 
@@ -273,9 +249,10 @@
                 <a href="#roasts">Roasts</a>
                 <a href="#visit">Visit</a>
                 <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
             </nav>
 
-            <!-- SECTION: MENU (Typewriter) -->
+            <!-- SECTION MENU (Typewriter) -->
             <section id="menu" class="section section--accent">
                 <div class="section-inner">
                     <div class="typewriter-wrap" aria-hidden="true">
@@ -289,6 +266,71 @@
                     </p>
                 </div>
             </section>
+
+            <!-- SECTION CONTACT -->
+            <!-- <section id="contact" class="section-full section--dark">
+                <div class="split-layout">
+
+                    <div class="split-media">
+                        <img src="img/roastery-outside-generated.png" alt="Outside view of the Darkground roastery">
+                    </div>
+                    <div class="section-inner">
+                        <h2 class="visually-hidden">Contact</h2>
+                        <span class="reveal-fade">Get</span>
+                        <span class="reveal-fade">in</span>
+                        <span class="reveal-fade">Touch.</span>
+                        <span class="reveal-fade-full">Get in Touch.</span>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-- SECTION: CONTACT -->
+            <section id="contact" class="section-full section--dark">
+                <div class="split-layout">
+
+                    <div class="split-media">
+                        <img src="img/roastery-outside-generated.png" alt="Outside view of the Darkground roastery">
+                    </div>
+
+                    <div class="section-inner">
+                        <h2 class="visually-hidden">Contact</h2>
+
+                        <div class="reveal-sequence--contact" aria-hidden="true">
+                            <span class="reveal-fade">Get</span>
+                            <span class="reveal-fade">in</span>
+                            <span class="reveal-fade">Touch.</span>
+                            <span class="reveal-fade-full">Get in Touch.</span>
+                        </div>
+                        <p class="visually-hidden">Get in Touch.</p>
+
+                        <div class="contact-info reveal">
+                            <a href="tel:+49301234567">+49 30 123 456 7</a>
+                            <a href="mailto:hello@darkground.coffee">hello@darkground.coffee</a>
+                            <p style="opacity:0.4; font-size:0.85rem; margin-top:0.5rem;">
+                                Mon – Fri, 9 am – 5 pm<br>
+                                12 Rostery Ave, RT-1987 Rosttown
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- INLINE BRAND -->
+            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
+                <a href="#hero" class="brand-link">
+                    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
+                        aria-hidden="true" focusable="false">
+                        <path
+                            d="M15.04,19.62c-1.1,1.32-2.39,2.32-4.01,2.72-.17.04-.53-.16-.63-.3-.12-.18-.17-.53-.1-.79.9-3.46.64-6.92-.64-10.24s-1.35-6.83-.3-10.18c.08-.25.37-.85.68-.83,2.08.14,3.85,1.24,5.18,2.83,3.57,4.27,3.47,12.44-.18,16.8Z"
+                            fill="currentColor" />
+                        <path
+                            d="M7.45,22.63c-2.73-.46-4.84-2.26-6.05-4.67C-1.38,12.4-.16,2.95,6.39.37c.23-.09.69-.07.87.03.21.11.36.61.28.91-.85,3.41-.69,6.89.58,10.21,1.3,3.4,1.44,6.99.28,10.46-.12.37-.41.74-.96.65Z"
+                            fill="currentColor" />
+                    </svg>
+                    Darkground Coffee Roasters
+                </a>
+            </nav>
 
         </main>
 

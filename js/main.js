@@ -13,22 +13,28 @@ const palettes = [
         inlineNav: { bg: "#1a0c05", color: "#f2e9d0" },
     },
     {
-        hero: { bg: "#f2e9d0", color: "#3d1f0d" },
-        sectionDark: { bg: "#e8dfc4", color: "#3d1f0d" },
+        hero: { bg: "#e5d9b8", color: "#3d1f0d" },
+        sectionDark: { bg: "#dbcca1", color: "#3d1f0d" },
         sectionMid: { bg: "#d4c9a8", color: "#3d1f0d" },
         sectionAccent: { bg: "#3d1f0d", color: "#f2e9d0" },
         inlineNav: { bg: "#c8bfa4", color: "#3d1f0d" },
     },
     {
         hero: { bg: "#c8a96e", color: "#3d1f0d" },
-        sectionDark: { bg: "#b8955a", color: "#f2e9d0" },
+        sectionDark: { bg: "#b8955a", color: "#2a1208" },
         sectionMid: { bg: "#3d1f0d", color: "#c8a96e" },
-        sectionAccent: { bg: "#f2e9d0", color: "#3d1f0d" },
+        sectionAccent: { bg: "rgb(253, 240, 204)", color: "#3d1f0d" },
         inlineNav: { bg: "#9c7a42", color: "#f2e9d0" },
     },
 ];
 
 let loopCount = 0;
+
+// ── Browser-Scroll-Restaurierung deaktivieren ──
+// Verhindert dass der Browser nach Reload die alte Scroll-Position wiederherstellt
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
 
 // ── DOM-Referenzen ──
 const main = document.getElementById("main-content");
@@ -48,6 +54,8 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         intro.addEventListener("animationend", () => {
             intro.style.display = "none";
             document.body.classList.remove("intro-active");
+            // Nach Intro-Exit: sicherstellen dass wir beim Hero sind
+            scrollToHero();
         }, { once: true });
     }, INTRO_DURATION);
 }
@@ -71,6 +79,8 @@ const originals = Array.from(main.children);
 originals.forEach(el => {
     const clone = el.cloneNode(true);
     clone.classList.add("is-clone", "is-clone--post");
+    clone.setAttribute("inert", "");       // aus Tab-Reihenfolge + Screenreader raus
+    clone.setAttribute("aria-hidden", "true");
     main.appendChild(clone);
 });
 
@@ -78,6 +88,8 @@ originals.forEach(el => {
 originals.forEach(el => {
     const clone = el.cloneNode(true);
     clone.classList.add("is-clone", "is-clone--pre");
+    clone.setAttribute("inert", "");
+    clone.setAttribute("aria-hidden", "true");
     main.insertBefore(clone, main.firstChild);
 });
 
@@ -88,10 +100,18 @@ function getOriginalHeight() {
     return h;
 }
 
-// Scroll-Startposition: mitten im Stack (zeigt Originals)
-window.addEventListener("load", () => {
+// Scroll-Startposition: direkt auf den Hero im Original-Stack
+function scrollToHero() {
+    const heroEl = originals.find(el => el.id === "hero");
+    if (!heroEl) return;
     const h = getOriginalHeight();
-    window.scrollTo({ top: h, behavior: "instant" });
+    // offsetTop des Originals + h = Position im mittleren Stack
+    const targetY = heroEl.offsetTop + h - originals[0].offsetTop;
+    window.scrollTo({ top: targetY, behavior: "instant" });
+}
+
+window.addEventListener("load", () => {
+    scrollToHero();
 });
 
 // Scroll-Reset in beide Richtungen
@@ -103,11 +123,17 @@ window.addEventListener("scroll", () => {
 
     if (window.scrollY < h) {
         isResetting = true;
+        const dirBefore = scrollDir; // Richtung vor dem Reset merken
         window.scrollTo({ top: window.scrollY + h, behavior: "instant" });
+        scrollDir = dirBefore;     // Reset-Sprung ignorieren
+        lastScrollY = window.scrollY;
         isResetting = false;
     } else if (window.scrollY >= h * 2) {
         isResetting = true;
+        const dirBefore = scrollDir;
         window.scrollTo({ top: window.scrollY - h, behavior: "instant" });
+        scrollDir = dirBefore;
+        lastScrollY = window.scrollY;
         isResetting = false;
     }
 }, { passive: true });
@@ -236,6 +262,7 @@ const standardSelectors = [
     ".reveal",
     ".stagger-item",
     ".typewriter",
+    ".reveal-sequence--contact",
 ].join(", ");
 
 document.querySelectorAll(standardSelectors).forEach(el => {
