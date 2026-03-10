@@ -514,7 +514,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 1.5rem 2rem;
     background: #1a0c05;
     border-top: 1px solid rgba(242, 233, 208, 0.07);
@@ -523,7 +523,7 @@ p {
 
 .inline-nav a {
     font-family: var(--display-font);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: clamp(1.2rem, 2vw, 2rem);
     letter-spacing: 0.1em;
     /* text-transform: uppercase; */
     color: var(--creme);
