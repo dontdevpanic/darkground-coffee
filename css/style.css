@@ -423,6 +423,55 @@ p {
     }
 }
 
+/* IMG GRID */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    /* height: 240px; */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Coffee Grid */
+
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.coffee-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.coffee-card h3 {
+    font-family: var(--display-font);
+    margin-top: 1rem;
+}
+
+/* Team Grid */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    /* height: 260px; */
+    object-fit: cover;
+}
+
 /* ==== BODY TEXT ==== */
 
 .body-text {
