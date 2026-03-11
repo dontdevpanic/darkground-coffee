@@ -4,27 +4,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Darkground Coffee | DevPanicZone</title>
+        <title>Darkground Coffee | Header Loop Version | DevPanicZone</title>
         <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <meta name="description"
-            content="Darkground Coffee Roasters | Implementation Sample of CSS animations and endless section loop scrolling">
+        <meta name="description" content="Darkground Coffee Roasters | Header + Endless Loop Version">
         <meta name="author" content="Bianca | DontDevPanic">
         <meta name="robots" content="index, follow">
-        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="css/header-loop.css">
     </head>
 
     <body>
 
-        <!-- INTRO -->
-        <div id="intro" aria-hidden="true">
-            <div class="reveal-sequence intro-sequence">
-                <span class="reveal-word">Coffee</span>
-                <span class="reveal-word">Roast</span>
-                <span class="reveal-word">Enjoy</span>
-                <span class="reveal-word">Repeat</span>
-            </div>
-        </div>
+        <!-- HEADER -->
+        <header class="site-header" role="banner">
+            <a href="#hero" class="header-brand">
+                <svg class="header-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64" aria-hidden="true"
+                    focusable="false">
+                    <path
+                        d="M15.04,19.62c-1.1,1.32-2.39,2.32-4.01,2.72-.17.04-.53-.16-.63-.3-.12-.18-.17-.53-.1-.79.9-3.46.64-6.92-.64-10.24s-1.35-6.83-.3-10.18c.08-.25.37-.85.68-.83,2.08.14,3.85,1.24,5.18,2.83,3.57,4.27,3.47,12.44-.18,16.8Z"
+                        fill="currentColor" />
+                    <path
+                        d="M7.45,22.63c-2.73-.46-4.84-2.26-6.05-4.67C-1.38,12.4-.16,2.95,6.39.37c.23-.09.69-.07.87.03.21.11.36.61.28.91-.85,3.41-.69,6.89.58,10.21,1.3,3.4,1.44,6.99.28,10.46-.12.37-.41.74-.96.65Z"
+                        fill="currentColor" />
+                </svg>
+                <span>Darkground</span>
+            </a>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="header-nav" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="header-nav" class="header-nav" aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#origin">Origin</a>
+                <a href="#roasts">Roasts</a>
+                <a href="#visit">Visit</a>
+                <a href="#menu">Menu</a>
+                <a href="#coffee">Coffee</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
         <!-- MAIN CONTENT -->
         <main id="main-content">
@@ -40,7 +64,6 @@
                                     fill: currentColor;
                                 }
 
-                                /* Dampf: alle drei Paths teilen die Animation, versetzt */
                                 .steam-path {
                                     fill: currentColor;
                                     transform-origin: center bottom;
@@ -89,17 +112,13 @@
                                 }
                             </style>
                         </defs>
-
                         <!-- Bean -->
-                        <g id="_6Aszwu.tif" data-name="6Aszwu.tif">
-                            <g>
-                                <path class="cls-2"
-                                    d="M83.65,227.41c-6.07,7.24-13.14,12.74-22.05,14.97-.91.23-2.94-.9-3.47-1.67-.68-.98-.94-2.9-.56-4.36,4.93-18.99,3.49-38-3.5-56.25-6.99-18.25-7.41-37.56-1.63-55.92.44-1.39,2.06-4.7,3.74-4.58,11.45.76,21.17,6.82,28.45,15.52,19.6,23.47,19.07,68.38-.97,92.31Z" />
-                                <path class="cls-2"
-                                    d="M41.94,243.92c-15.02-2.52-26.6-12.4-33.25-25.68C-6.61,187.72.12,135.78,36.12,121.63c1.24-.49,3.77-.37,4.77.16,1.14.61,1.97,3.38,1.56,5.01-4.68,18.75-3.77,37.86,3.19,56.09,7.15,18.7,7.94,38.41,1.55,57.49-.69,2.05-2.23,4.05-5.25,3.54Z" />
-                            </g>
+                        <g>
+                            <path class="cls-2"
+                                d="M83.65,227.41c-6.07,7.24-13.14,12.74-22.05,14.97-.91.23-2.94-.9-3.47-1.67-.68-.98-.94-2.9-.56-4.36,4.93-18.99,3.49-38-3.5-56.25-6.99-18.25-7.41-37.56-1.63-55.92.44-1.39,2.06-4.7,3.74-4.58,11.45.76,21.17,6.82,28.45,15.52,19.6,23.47,19.07,68.38-.97,92.31Z" />
+                            <path class="cls-2"
+                                d="M41.94,243.92c-15.02-2.52-26.6-12.4-33.25-25.68C-6.61,187.72.12,135.78,36.12,121.63c1.24-.49,3.77-.37,4.77.16,1.14.61,1.97,3.38,1.56,5.01-4.68,18.75-3.77,37.86,3.19,56.09,7.15,18.7,7.94,38.41,1.55,57.49-.69,2.05-2.23,4.05-5.25,3.54Z" />
                         </g>
-
                         <!-- Steam -->
                         <g class="steam-group">
                             <path class="steam-path"
@@ -111,33 +130,17 @@
                         </g>
                     </svg>
                     <h1 class="hero-title">Darkground Coffee Roasters</h1>
-                    <span class="hero-brand reveal-brand" aria-hidden="true">Darkground</span>
+                    <span class="hero-brand" aria-hidden="true">Darkground</span>
                     <p class="hero-tagline">Hand-roasted since 1987</p>
                 </div>
             </section>
 
-            <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
-                <a href="#hero">Top</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#origin">Origin</a>
-                <a href="#roasts">Roasts</a>
-                <a href="#visit">Visit</a>
-                <a href="#menu">Menu</a>
-                <a href="#coffee">Coffee Selection</a>
-                <a href="#team">Team</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <!-- SECTION ABOUT (Reveal) -->
+            <!-- SECTION ABOUT -->
             <section id="about" class="section-full section--dark">
                 <div class="split-layout">
-
                     <div class="split-media">
                         <img src="img/roastery-outside-generated.jpg" alt="Entrance of Darkground Coffee Roasters">
                     </div>
-
                     <div class="section-inner">
                         <h2 class="reveal">About Us</h2>
                         <p class="reveal body-text">
@@ -146,15 +149,13 @@
                             Darkground - coffee without compromise.
                         </p>
                     </div>
-
                 </div>
             </section>
 
-            <!-- SECTION ROASTERY GALERY -->
+            <!-- SECTION GALLERY -->
             <section id="gallery" class="section section--mid">
                 <div class="section-inner">
                     <h2 class="reveal">The Roastery</h2>
-
                     <div class="gallery-grid">
                         <img src="img/roastery-1.jpg" alt="">
                         <img src="img/roastery-2.jpg" alt="">
@@ -168,21 +169,7 @@
                 </div>
             </section>
 
-            <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
-                <a href="#hero">Top</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#origin">Origin</a>
-                <a href="#roasts">Roasts</a>
-                <a href="#visit">Visit</a>
-                <a href="#menu">Menu</a>
-                <a href="#coffee">Coffee Selection</a>
-                <a href="#team">Team</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <!-- SECTION ORIGIN (Ticker) -->
+            <!-- SECTION ORIGIN -->
             <section id="origin" class="section section--accent">
                 <div class="ticker-wrap" aria-hidden="true">
                     <div class="ticker">
@@ -217,23 +204,7 @@
                 </div>
             </section>
 
-            <!-- INLINE BRAND -->
-            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
-                <a href="#hero" class="brand-link">
-                    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
-                        aria-hidden="true" focusable="false">
-                        <path
-                            d="M15.04,19.62c-1.1,1.32-2.39,2.32-4.01,2.72-.17.04-.53-.16-.63-.3-.12-.18-.17-.53-.1-.79.9-3.46.64-6.92-.64-10.24s-1.35-6.83-.3-10.18c.08-.25.37-.85.68-.83,2.08.14,3.85,1.24,5.18,2.83,3.57,4.27,3.47,12.44-.18,16.8Z"
-                            fill="currentColor" />
-                        <path
-                            d="M7.45,22.63c-2.73-.46-4.84-2.26-6.05-4.67C-1.38,12.4-.16,2.95,6.39.37c.23-.09.69-.07.87.03.21.11.36.61.28.91-.85,3.41-.69,6.89.58,10.21,1.3,3.4,1.44,6.99.28,10.46-.12.37-.41.74-.96.65Z"
-                            fill="currentColor" />
-                    </svg>
-                    Darkground Coffee Roasters
-                </a>
-            </nav>
-
-            <!-- SECTION ROASTS (Stagger words) -->
+            <!-- SECTION ROASTS -->
             <section id="roasts" class="section section--mid">
                 <div class="section-inner">
                     <div class="stagger-sequence" aria-hidden="true">
@@ -253,7 +224,6 @@
             <!-- SECTION VISIT -->
             <section id="visit" class="section-full section--dark section--overflow-hidden">
                 <div class="split-layout split-layout--reverse">
-
                     <div class="section-inner">
                         <div class="slide-in-wrap" aria-hidden="true">
                             <span class="slide-in-left">Come</span>
@@ -267,29 +237,13 @@
                             Coffee straight from the roaster, fresh and unpackaged.
                         </p>
                     </div>
-
                     <div class="split-media">
                         <img src="img/coffee-beans-landscape.png" alt="Outside view of the Darkground roastery">
                     </div>
-
                 </div>
             </section>
 
-            <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
-                <a href="#hero">Top</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#origin">Origin</a>
-                <a href="#roasts">Roasts</a>
-                <a href="#visit">Visit</a>
-                <a href="#menu">Menu</a>
-                <a href="#coffee">Coffee Selection</a>
-                <a href="#team">Team</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <!-- SECTION MENU (Typewriter) -->
+            <!-- SECTION MENU -->
             <section id="menu" class="section section--accent">
                 <div class="section-inner">
                     <div class="typewriter-wrap" aria-hidden="true">
@@ -304,119 +258,62 @@
                 </div>
             </section>
 
-            <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
-                <a href="#hero">Top</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#origin">Origin</a>
-                <a href="#roasts">Roasts</a>
-                <a href="#visit">Visit</a>
-                <a href="#menu">Menu</a>
-                <a href="#coffee">Coffee Selection</a>
-                <a href="#team">Team</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <!-- SECTION PRODUCTS () -->
+            <!-- SECTION COFFEE SELECTION -->
             <section id="coffee" class="section section--mid">
                 <div class="section-inner">
                     <h2 class="reveal">Coffee Selection</h2>
-
                     <div class="coffee-grid">
-
                         <article class="coffee-card">
                             <img src="img/espresso.jpg" alt="">
                             <h3>Espresso</h3>
                             <p>Deep, intense roast with chocolate notes.</p>
                         </article>
-
                         <article class="coffee-card">
                             <img src="img/latte.jpg" alt="">
                             <h3>Latte</h3>
                             <p>Smooth espresso with creamy milk.</p>
                         </article>
-
                         <article class="coffee-card">
                             <img src="img/coldbrew.jpg" alt="">
                             <h3>Cold Brew</h3>
                             <p>Slow brewed for 16 hours.</p>
                         </article>
-
                     </div>
                 </div>
             </section>
 
-            <!-- INLINE BRAND -->
-            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
-                <a href="#hero" class="brand-link">
-                    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
-                        aria-hidden="true" focusable="false">
-                        <path
-                            d="M15.04,19.62c-1.1,1.32-2.39,2.32-4.01,2.72-.17.04-.53-.16-.63-.3-.12-.18-.17-.53-.1-.79.9-3.46.64-6.92-.64-10.24s-1.35-6.83-.3-10.18c.08-.25.37-.85.68-.83,2.08.14,3.85,1.24,5.18,2.83,3.57,4.27,3.47,12.44-.18,16.8Z"
-                            fill="currentColor" />
-                        <path
-                            d="M7.45,22.63c-2.73-.46-4.84-2.26-6.05-4.67C-1.38,12.4-.16,2.95,6.39.37c.23-.09.69-.07.87.03.21.11.36.61.28.91-.85,3.41-.69,6.89.58,10.21,1.3,3.4,1.44,6.99.28,10.46-.12.37-.41.74-.96.65Z"
-                            fill="currentColor" />
-                    </svg>
-                    Darkground Coffee Roasters
-                </a>
-            </nav>
-
-            <!-- SECTION TEAM () -->
+            <!-- SECTION TEAM -->
             <section id="team" class="section section--accent">
                 <div class="section-inner">
                     <h2 class="reveal">The Roasters</h2>
-
                     <div class="team-grid">
-
                         <div class="team-member">
                             <img src="img/roaster1.jpg" alt="">
                             <h3>Marco Silva</h3>
                             <p>Head Roaster</p>
                         </div>
-
                         <div class="team-member">
                             <img src="img/roaster2.jpg" alt="">
                             <h3>Ana Torres</h3>
                             <p>Green Bean Specialist</p>
                         </div>
-
                         <div class="team-member">
                             <img src="img/roaster3.jpg" alt="">
                             <h3>Jonas Berg</h3>
                             <p>Espresso Master</p>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
-                <a href="#hero">Top</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#origin">Origin</a>
-                <a href="#roasts">Roasts</a>
-                <a href="#visit">Visit</a>
-                <a href="#menu">Menu</a>
-                <a href="#coffee">Coffee Selection</a>
-                <a href="#team">Team</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <!-- SECTION: CONTACT -->
+            <!-- SECTION CONTACT -->
             <section id="contact" class="section-full section--dark">
                 <div class="split-layout">
-
                     <div class="split-media">
                         <img src="img/darkground-contact-generated.png" alt="Outside view of the Darkground roastery">
                     </div>
-
                     <div class="section-inner">
                         <h2 class="visually-hidden">Contact</h2>
-
                         <div class="reveal-sequence--contact" aria-hidden="true">
                             <span class="reveal-fade">Get</span>
                             <span class="reveal-fade">in</span>
@@ -424,7 +321,6 @@
                             <span class="reveal-fade-full">Get in Touch.</span>
                         </div>
                         <p class="visually-hidden">Get in Touch.</p>
-
                         <div class="contact-info reveal">
                             <a href="tel:+1987000000">+1 987 000 000</a>
                             <a href="mailto:hello@darkground.coffee">hello@darkground.coffee</a>
@@ -434,38 +330,22 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </section>
 
-            <!-- INLINE BRAND -->
-            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
-                <a href="#hero" class="brand-link">
-                    <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
-                        aria-hidden="true" focusable="false">
-                        <path
-                            d="M15.04,19.62c-1.1,1.32-2.39,2.32-4.01,2.72-.17.04-.53-.16-.63-.3-.12-.18-.17-.53-.1-.79.9-3.46.64-6.92-.64-10.24s-1.35-6.83-.3-10.18c.08-.25.37-.85.68-.83,2.08.14,3.85,1.24,5.18,2.83,3.57,4.27,3.47,12.44-.18,16.8Z"
-                            fill="currentColor" />
-                        <path
-                            d="M7.45,22.63c-2.73-.46-4.84-2.26-6.05-4.67C-1.38,12.4-.16,2.95,6.39.37c.23-.09.69-.07.87.03.21.11.36.61.28.91-.85,3.41-.69,6.89.58,10.21,1.3,3.4,1.44,6.99.28,10.46-.12.37-.41.74-.96.65Z"
-                            fill="currentColor" />
-                    </svg>
-                    Darkground Coffee Roasters
-                </a>
-            </nav>
         </main>
 
-        <!-- FOOTER - always on top -->
+        <!-- FOOTER -->
         <footer class="footer">
             <nav class="footer-nav" aria-label="Footer navigation">
                 <a href="https://github.com/dontdevpanic" target="_blank" rel="noopener">GitHub Profile</a>
                 <a href="https://github.com/dontdevpanic/darkground-coffee" target="_blank" rel="noopener">GitHub
                     Repo</a>
-                <a href="header-loop.html" target="_blank" rel="noopener">Header Loop Version</a>
+                <a href="index.html" rel="noopener">← No Header Loop Version</a>
             </nav>
         </footer>
 
-        <script src="js/main.js"></script>
+        <script src="js/header-loop.js"></script>
 
     </body>
 
