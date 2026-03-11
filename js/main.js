@@ -1,9 +1,11 @@
-// ══════════════════════════════════════════════
+// ----------------------------------------------
 //  CSS ANIMATIONS SHOWCASE — main.js
 //  DevPanicZone | vanilla JS, no dependencies
-// ══════════════════════════════════════════════
+// ----------------------------------------------
 
-// ── Paletten — wechseln pro Loop, alle Sections betroffen ──
+
+
+// Palettes - switch per loop, all sections affected 
 const palettes = [
     {
         hero: { bg: "#3d1f0d", color: "#f2e9d0" },
@@ -30,17 +32,17 @@ const palettes = [
 
 let loopCount = 0;
 
-// ── Browser-Scroll-Restaurierung deaktivieren ──
-// Verhindert dass der Browser nach Reload die alte Scroll-Position wiederherstellt
+// Disable browser scroll restoration 
+// Prevents the browser from restoring the previous scroll position on reload
 if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
 }
 
-// ── DOM-Referenzen ──
+// DOM-References
 const main = document.getElementById("main-content");
 const intro = document.getElementById("intro");
 
-// ── INTRO ──
+// INTRO
 document.body.classList.add("intro-active");
 
 if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -54,37 +56,37 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         intro.addEventListener("animationend", () => {
             intro.style.display = "none";
             document.body.classList.remove("intro-active");
-            // Nach Intro-Exit: sicherstellen dass wir beim Hero sind
+            // After intro exit: make sure we land on the hero
             scrollToHero();
         }, { once: true });
     }, INTRO_DURATION);
 }
 
-// ══════════════════════════════════════════════
-//  ENDLESS LOOP — Pre-Klon + Post-Klon
+// ----------------------------------------------
+//  ENDLESS LOOP - pre-clone + post-clone
 //
-//  Stack im DOM:
-//  [ pre-clone ]   ← eingefügt vor den Originals
-//  [ originals ]   ← der echte Inhalt
-//  [ post-clone ]  ← angehängt nach den Originals
+//  DOM stack:
+//  [ pre-clone ]   - inserted before originals
+//  [ originals ]   - the real content
+//  [ post-clone ]  - appended after originals
 //
-//  Scroll startet bei originalHeight (zeigt Originals)
-//  Reset nach oben:  scrollY < originalHeight        → + originalHeight
-//  Reset nach unten: scrollY >= 2 × originalHeight   → - originalHeight
-// ══════════════════════════════════════════════
+//  Scroll starts at originalHeight (shows originals)
+//  Reset upward:   scrollY < originalHeight        + originalHeight
+//  Reset downward: scrollY >= 2 × originalHeight   - originalHeight
+// ----------------------------------------------
 
 const originals = Array.from(main.children);
 
-// Post-Klon (nach unten scrollen)
+// Post-Clone (scroll down)
 originals.forEach(el => {
     const clone = el.cloneNode(true);
     clone.classList.add("is-clone", "is-clone--post");
-    clone.setAttribute("inert", "");       // aus Tab-Reihenfolge + Screenreader raus
+    clone.setAttribute("inert", "");       // remove from tab order + screen readers
     clone.setAttribute("aria-hidden", "true");
     main.appendChild(clone);
 });
 
-// Pre-Klon (nach oben scrollen)
+// Pre-Clone (scroll up)
 originals.forEach(el => {
     const clone = el.cloneNode(true);
     clone.classList.add("is-clone", "is-clone--pre");
@@ -93,19 +95,19 @@ originals.forEach(el => {
     main.insertBefore(clone, main.firstChild);
 });
 
-// Hilfsfunktion: Gesamthöhe der Original-Elemente
+// Utility: height of original elements
 function getOriginalHeight() {
     let h = 0;
     originals.forEach(el => { h += el.offsetHeight; });
     return h;
 }
 
-// Scroll-Startposition: direkt auf den Hero im Original-Stack
+// Scroll start position: directly on the hero in the original stack
 function scrollToHero() {
     const heroEl = originals.find(el => el.id === "hero");
     if (!heroEl) return;
     const h = getOriginalHeight();
-    // offsetTop des Originals + h = Position im mittleren Stack
+    // offsetTop of original + h = position in the middle stack
     const targetY = heroEl.offsetTop + h - originals[0].offsetTop;
     window.scrollTo({ top: targetY, behavior: "instant" });
 }
@@ -114,7 +116,7 @@ window.addEventListener("load", () => {
     scrollToHero();
 });
 
-// Scroll-Reset in beide Richtungen
+// Scroll-reset in both directions
 let isResetting = false;
 
 window.addEventListener("scroll", () => {
@@ -123,9 +125,9 @@ window.addEventListener("scroll", () => {
 
     if (window.scrollY < h) {
         isResetting = true;
-        const dirBefore = scrollDir; // Richtung vor dem Reset merken
+        const dirBefore = scrollDir; // Remember direction before reset
         window.scrollTo({ top: window.scrollY + h, behavior: "instant" });
-        scrollDir = dirBefore;     // Reset-Sprung ignorieren
+        scrollDir = dirBefore;     // Ignore the reset jump
         lastScrollY = window.scrollY;
         isResetting = false;
     } else if (window.scrollY >= h * 2) {
@@ -138,19 +140,19 @@ window.addEventListener("scroll", () => {
     }
 }, { passive: true });
 
-// ══════════════════════════════════════════════
-//  INLINE NAV — Anchor-Links abfangen
+// ----------------------------------------------
+//  INLINE NAV - intercept anchor links
 //
-//  IDs existieren 3× im DOM (pre-clone, original, post-clone).
-//  href="#about" würde immer zum pre-clone (ganz oben) springen.
-//  Fix: scrollY des Originals berechnen + originalHeight addieren
-//  damit wir immer im mittleren (Original-)Stack landen.
-// ══════════════════════════════════════════════
+//  IDs exist 3× in the DOM (pre-clone, original, post-clone).
+//  href="#about" would always jump to the pre-clone (very top).
+//  Fix: calculate offsetTop of original + add originalHeight
+//  so we always land in the middle (original) stack.
+// ----------------------------------------------
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", (e) => {
         const targetId = link.getAttribute("href").slice(1);
-        // Original-Element finden (nicht clone)
+        // find original element (not clone)
         const target = Array.from(
             document.querySelectorAll(`#${targetId}`)
         ).find(el => !el.closest(".is-clone"));
@@ -159,20 +161,20 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         e.preventDefault();
 
         const h = getOriginalHeight();
-        // offsetTop des Originals + originalHeight = Position im mittleren Stack
+        // offsetTop of original + originalHeight = position in middle stack
         const targetY = target.offsetTop + h - originals[0].offsetTop;
 
         window.scrollTo({ top: targetY, behavior: "smooth" });
     });
 });
 
-// ══════════════════════════════════════════════
-//  FARBWECHSEL — wenn Hero fast vollständig sichtbar
+// ----------------------------------------------
+//  FARBWECHSEL - when hero is almost fully visible
 //
-//  threshold: 0.95 = Hero muss zu 95% im Viewport sein
-//  (entspricht: obere Kante liegt nahezu am oberen Bildschirmrand)
-//  Cooldown verhindert Flackern bei minimalem Hin-und-Her-Scrollen.
-// ══════════════════════════════════════════════
+//  threshold: 0.95 = hero must be 95% in viewport
+//  (meaning: top edge is nearly at the top of the screen)
+//  Cooldown prevents flickering on minimal back-and-forth scrolling.
+// ----------------------------------------------
 
 function applyPalette(index) {
     const p = palettes[index % palettes.length];
@@ -216,7 +218,7 @@ const heroObserver = new IntersectionObserver((entries) => {
         lastPaletteChange = now;
 
         heroVisitCount++;
-        if (heroVisitCount === 1) return; // Startpalette, kein Wechsel
+        if (heroVisitCount === 1) return; // First visit, no palette change
         loopCount++;
         applyPalette(loopCount);
     });
@@ -224,11 +226,11 @@ const heroObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".hero").forEach(el => heroObserver.observe(el));
 
-// ══════════════════════════════════════════════
-//  SCROLL-ANIMATIONEN
-// ══════════════════════════════════════════════
+// ----------------------------------------------
+//  SCROLL-ANIMATIONS
+// ----------------------------------------------
 
-// ── Scroll-Richtung tracken ──
+// Track scroll direction
 let lastScrollY = window.scrollY;
 let scrollDir = "down"; // "down" | "up"
 
@@ -238,9 +240,9 @@ window.addEventListener("scroll", () => {
     lastScrollY = current;
 }, { passive: true });
 
-// Standard-Observer für reveal, stagger, typewriter
-// Animationen spielen nur beim nach-unten-scrollen.
-// Beim Hochscrollen bleibt is-visible drauf — kein Reset, kein Neustart.
+// Standard observer for reveal, stagger, typewriter
+// Animations only play when scrolling down.
+// When scrolling back up, is-visible stays — no reset, no restart.
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const el = entry.target;
@@ -248,8 +250,8 @@ const scrollObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             el.classList.add("is-visible");
         } else {
-            // Nur resetten wenn Element oben raus ist (wurde bereits passiert)
-            // UND man nach unten scrollt — dann kommt es beim nächsten Loop neu
+            // Only reset if element has scrolled out above
+            // AND we're scrolling down — it will animate fresh on the next loop
             const above = entry.boundingClientRect.top < 0;
             if (scrollDir === "down" && above) {
                 el.classList.remove("is-visible");
@@ -262,17 +264,19 @@ const standardSelectors = [
     ".reveal",
     ".stagger-item",
     ".typewriter",
-    ".reveal-sequence--contact",
+    ".reveal-sequence--contact", ".reveal-brand",
 ].join(", ");
 
 document.querySelectorAll(standardSelectors).forEach(el => {
     scrollObserver.observe(el);
 });
 
-// Separater Observer für slide-in Elemente —
-// Das Problem: translateX(±100vw) schiebt das Element sofort wieder
-// aus dem Viewport → Observer entfernt is-visible → Animation bricht ab.
-// Fix: is-visible erst nach animationend entfernen, nicht beim Observer-Exit.
+// ----------------------------------------------
+// Separate observer for slide-in elements —
+// The problem: translateX(±100vw) immediately pushes the element
+// back out of the viewport → observer removes is-visible → animation breaks.
+// Fix: remove is-visible after animationend, not on observer exit.
+// ----------------------------------------------
 const slideObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const el = entry.target;
@@ -281,8 +285,8 @@ const slideObserver = new IntersectionObserver((entries) => {
             el.dataset.animating = "true";
             el.classList.add("is-visible");
 
-            // Nach Ende der Animation Flag zurücksetzen
-            // damit beim nächsten Loop wieder animiert wird
+            // Reset flag after animation ends
+            // so it animates again on the next loop
             el.addEventListener("animationend", () => {
                 delete el.dataset.animating;
             }, { once: true });
@@ -303,3 +307,24 @@ const slideObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll(".slide-in-left, .slide-in-right").forEach(el => {
     slideObserver.observe(el);
 });
+
+// ----------------------------------------------
+//  CONSOLE EASTER EGG
+// ----------------------------------------------
+
+console.log(
+    "%cDarkground Coffee Roasters",
+    "font-size: 1.4rem; font-weight: bold; color: #c8a96e; background: #1a0c05; padding: 8px 16px; border-radius: 4px;"
+);
+console.log(
+    "%cBuilt by DevPanicZone  |  github.com/dontdevpanic",
+    "font-size: 0.85rem; color: #f2e9d0; background: #2a1208; padding: 4px 16px;"
+);
+console.log(
+    "%c⚠️  Warning: May cause CSS animation overdose.\nSide effects include obsessive keyframe tweaking\nand an inability to leave opacity at 1.",
+    "font-size: 0.85rem; color: #f2e9d0; background: #3d1f0d; padding: 8px 16px; border-left: 3px solid #c8a96e;"
+);
+console.log(
+    "%c👀 Nosy? Check out the repo:\nhttps://github.com/dontdevpanic/darkground-coffee",
+    "font-size: 0.85rem; color: #c8a96e; background: #1a0c05; padding: 8px 16px;"
+);

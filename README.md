@@ -5,6 +5,10 @@ This project implements the techniques from [css-animations-showcase](https://gi
 
 > ⚠️ Warning: May cause CSS animation overdose. Side effects include obsessive keyframe tweaking and an inability to leave opacity at 1.
 
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-5d351c)](https://dontdevpanic.github.io/darkground-coffee/)
+
+
 ---
 
 ## What's in the box
@@ -112,6 +116,10 @@ Dieses Projekt setzt die Techniken aus [css-animations-showcase](https://github.
 
 > ⚠️ Warnung: Kann zu CSS Animation Overdose führen. Nebenwirkungen umfassen obsessives Keyframe-Tuning und die Unfähigkeit, opacity einfach bei 1 zu lassen.
 
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-red)](https://dontdevpanic.github.io/darkground-coffee/)
+
+
 ---
 
 ## Was steckt drin
@@ -140,13 +148,13 @@ Alles sitzt in einem **klon-basierten Endlos-Vertikal-Loop** — Sections wieder
 
 ### Split Layout (2-Spalten-Raster)
 ```html
-<!-- Bild links, Text rechts -->
+<!-- image left, text right -->
 <div class="split-layout">
     <div class="split-media"><img src="..." alt="..."></div>
     <div class="section-inner">...</div>
 </div>
 
-<!-- Text links, Bild rechts -->
+<!-- text left, image richt -->
 <div class="split-layout split-layout--reverse">
     <div class="section-inner">...</div>
     <div class="split-media"><img src="..." alt="..."></div>
@@ -172,7 +180,7 @@ Klasse hinzufügen, der IntersectionObserver erledigt den Rest:
     <a href="#about">About</a>
 </nav>
 
-<!-- Brand-Nav mit Logo -->
+<!-- Brand-Nav with Logo -->
 <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
     <a href="#hero" class="brand-link">
         <svg class="brand-logo" ...>...</svg>
