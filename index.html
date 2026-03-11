@@ -12,6 +12,7 @@
         <meta name="author" content="Bianca | DontDevPanic">
         <meta name="robots" content="index, follow">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/lightbox.css">
     </head>
 
     <body>
@@ -155,15 +156,16 @@
                 <div class="section-inner">
                     <h2 class="reveal">The Roastery</h2>
 
+                    <!-- LIGHTBOX GROUP: add data-lightbox-group="" -->
                     <div class="gallery-grid">
-                        <img src="img/roastery-1.jpg" alt="">
-                        <img src="img/roastery-2.jpg" alt="">
-                        <img src="img/roastery-3.jpg" alt="">
-                        <img src="img/roastery-4.jpg" alt="">
-                        <img src="img/roastery-5.jpg" alt="">
-                        <img src="img/roastery-6.jpg" alt="">
-                        <img src="img/roastery-7.jpg" alt="">
-                        <img src="img/roastery-8.jpg" alt="">
+                        <img src="img/roastery-1.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-2.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-3.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-4.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-5.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-6.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-7.jpg" data-lightbox-group="roastery" alt="">
+                        <img src="img/roastery-8.jpg" data-lightbox-group="roastery" alt="">
                     </div>
                 </div>
             </section>
@@ -323,22 +325,23 @@
                 <div class="section-inner">
                     <h2 class="reveal">Coffee Selection</h2>
 
+                    <!-- SINGLE LIGHTBOX: add class="lightbox-solo" -->
                     <div class="coffee-grid">
 
                         <article class="coffee-card">
-                            <img src="img/espresso.jpg" alt="">
+                            <img src="img/espresso.jpg" class="lightbox-solo" alt="Espresso">
                             <h3>Espresso</h3>
                             <p>Deep, intense roast with chocolate notes.</p>
                         </article>
 
                         <article class="coffee-card">
-                            <img src="img/latte.jpg" alt="">
+                            <img src="img/latte.jpg" class="lightbox-solo" alt="Latte Macchiato">
                             <h3>Latte</h3>
                             <p>Smooth espresso with creamy milk.</p>
                         </article>
 
                         <article class="coffee-card">
-                            <img src="img/coldbrew.jpg" alt="">
+                            <img src="img/coldbrew.jpg" class="lightbox-solo" alt="Cold Brew">
                             <h3>Cold Brew</h3>
                             <p>Slow brewed for 16 hours.</p>
                         </article>
@@ -368,22 +371,23 @@
                 <div class="section-inner">
                     <h2 class="reveal">The Roasters</h2>
 
+                    <!-- LIGHTBOX GROUP: add data-lightbox-group="" -->
                     <div class="team-grid">
 
                         <div class="team-member">
-                            <img src="img/roaster1.jpg" alt="">
+                            <img src="img/roaster1.jpg" data-lightbox-group="team" alt="Marco Silva">
                             <h3>Marco Silva</h3>
                             <p>Head Roaster</p>
                         </div>
 
                         <div class="team-member">
-                            <img src="img/roaster2.jpg" alt="">
+                            <img src="img/roaster2.jpg" data-lightbox-group="team" alt="Ana Torres">
                             <h3>Ana Torres</h3>
                             <p>Green Bean Specialist</p>
                         </div>
 
                         <div class="team-member">
-                            <img src="img/roaster3.jpg" alt="">
+                            <img src="img/roaster3.jpg" data-lightbox-group="team" alt="Jonas Berg">
                             <h3>Jonas Berg</h3>
                             <p>Espresso Master</p>
                         </div>
@@ -466,7 +470,7 @@
         </footer>
 
         <script src="js/main.js"></script>
-
+        <script src="js/lightbox.js"></script>
     </body>
 
 </html>
