@@ -96,6 +96,18 @@ Add a class, the IntersectionObserver handles the rest:
 - Zero dependencies, zero CDN calls
 - GitHub Pages ready
 
+
+## Not a fan of endless loops?
+
+Fair enough. Two alternative versions are included:
+
+**[`header-loop.html`](header-loop.html)** — sticky header + endless loop. Same loop mechanism, but with a persistent navigation bar instead of inline navigation. Palette switching still works.
+
+**[`header-classic.html`](header-classic.html)** — sticky header, no loop. Just a regular site that scrolls to the bottom and stops. ScrollSpy, back-to-top button, no clones, no palette switching. Start here if the loop is too much.
+
+All three versions share the same content and sections. The footer of each version links to the others.
+
+
 ## Images
 
 All images used in this demo are AI-generated and created specifically for this project. No stock photos, no licenses to worry about.
@@ -206,6 +218,19 @@ Klasse hinzufügen, der IntersectionObserver erledigt den Rest:
 - Vanilla HTML5, CSS3, JavaScript (ES6+)
 - Null Abhängigkeiten, keine CDN-Aufrufe
 - Direkt für GitHub Pages geeignet
+
+
+## Kein Fan von Endlos-Loops?
+
+Verständlich. Zwei alternative Versionen sind im Repo enthalten:
+
+**[`header-loop.html`](header-loop.html)** — Sticky Header + Endlos-Loop. Gleicher Loop-Mechanismus, aber mit einer persistenten Navigationsleiste statt Inline-Navigation. Palettenwechsel funktioniert weiterhin.
+
+**[`header-classic.html`](header-classic.html)** — Sticky Header, kein Loop. Eine ganz normale Seite, die unten endet. Mit ScrollSpy, Back-to-Top-Button, ohne Klone, ohne Palettenwechsel. Guter Einstiegspunkt, wenn der Loop zu viel ist.
+
+Alle drei Versionen teilen denselben Inhalt und dieselben Sections. Der Footer jeder Version verlinkt auf die anderen.
+
+
 
 ## Bilder
 
