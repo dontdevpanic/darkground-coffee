@@ -18,6 +18,8 @@
     <body>
 
         <!-- INTRO -->
+        <!-- aria-hidden="true": intentionally excluded from a11y tree -->
+        <!-- axe may flag contrast on large intro text — known false positive -->
         <div id="intro" aria-hidden="true">
             <div class="reveal-sequence intro-sequence">
                 <span class="reveal-word">Coffee</span>
@@ -152,7 +154,7 @@
                 </div>
             </section>
 
-            <!-- SECTION ROASTERY GALERY -->
+            <!-- SECTION ROASTERY GALLERY -->
             <section id="gallery" class="section section--mid">
                 <div class="section-inner">
                     <h2 class="reveal">The Roastery</h2>
@@ -187,7 +189,7 @@
             </section>
 
             <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
+            <nav class="inline-nav" aria-label="Navigation after Gallery">
                 <a href="#hero">Top</a>
                 <a href="#about">About</a>
                 <a href="#gallery">Gallery</a>
@@ -236,7 +238,7 @@
             </section>
 
             <!-- INLINE BRAND -->
-            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
+            <nav class="inline-nav inline-nav--brand" aria-label="Navigation after Origin">
                 <a href="#hero" class="brand-link">
                     <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
                         aria-hidden="true" focusable="false">
@@ -296,7 +298,7 @@
             </section>
 
             <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
+            <nav class="inline-nav" aria-label="Navigation after Visit">
                 <a href="#hero">Top</a>
                 <a href="#about">About</a>
                 <a href="#gallery">Gallery</a>
@@ -325,7 +327,7 @@
             </section>
 
             <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
+            <nav class="inline-nav" aria-label="Navigation after Menu">
                 <a href="#hero">Top</a>
                 <a href="#about">About</a>
                 <a href="#gallery">Gallery</a>
@@ -373,7 +375,7 @@
             </section>
 
             <!-- INLINE BRAND -->
-            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
+            <nav class="inline-nav inline-nav--brand" aria-label="Navigation after Coffee">
                 <a href="#hero" class="brand-link">
                     <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
                         aria-hidden="true" focusable="false">
@@ -422,7 +424,7 @@
             </section>
 
             <!-- INLINE NAV -->
-            <nav class="inline-nav" aria-label="Page navigation">
+            <nav class="inline-nav" aria-label="Navigation after Team">
                 <a href="#hero">Top</a>
                 <a href="#about">About</a>
                 <a href="#gallery">Gallery</a>
@@ -457,7 +459,7 @@
                         <div class="contact-info reveal">
                             <a href="tel:+1987000000">+1 987 000 000</a>
                             <a href="mailto:hello@darkground.coffee">hello@darkground.coffee</a>
-                            <p style="opacity:0.4; font-size:0.85rem; margin-top:0.5rem;">
+                            <p>
                                 Mon – Fri, 9 am – 5 pm<br>
                                 12 Rostery Ave, RT-1987 Rosttown
                             </p>
@@ -468,7 +470,7 @@
             </section>
 
             <!-- INLINE BRAND -->
-            <nav class="inline-nav inline-nav--brand" aria-label="Page navigation">
+            <nav class="inline-nav inline-nav--brand" aria-label="Navigation after Contact">
                 <a href="#hero" class="brand-link">
                     <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.83 22.64"
                         aria-hidden="true" focusable="false">

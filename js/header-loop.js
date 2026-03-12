@@ -4,28 +4,28 @@
 //  DevPanicZone | vanilla JS, no dependencies
 // ══════════════════════════════════════════════
 
-// ── Palettes — switch per loop, all sections affected ──
+// Palettes - switch per loop, all sections affected 
 const palettes = [
     {
         hero: { bg: "#3d1f0d", color: "#f2e9d0" },
         sectionDark: { bg: "#2a1208", color: "#f2e9d0" },
         sectionMid: { bg: "#3d1f0d", color: "#f2e9d0" },
         sectionAccent: { bg: "#c8a96e", color: "#3d1f0d" },
-        inlineNav: { bg: "#1a0c05", color: "#f2e9d0" },
+        inlineNav: { bg: "#1a0c05", color: "#fcf2d7" },
     },
     {
         hero: { bg: "#e5d9b8", color: "#3d1f0d" },
-        sectionDark: { bg: "#dbcca1", color: "#3d1f0d" },
-        sectionMid: { bg: "#d4c9a8", color: "#3d1f0d" },
+        sectionDark: { bg: "#dbcca1", color: "#301809" },
+        sectionMid: { bg: "#e5d7ac", color: "#3d1f0d" },
         sectionAccent: { bg: "#3d1f0d", color: "#f2e9d0" },
-        inlineNav: { bg: "#c8bfa4", color: "#3d1f0d" },
+        inlineNav: { bg: "#c3b692", color: "#2a1208" },
     },
     {
         hero: { bg: "#c8a96e", color: "#3d1f0d" },
-        sectionDark: { bg: "#b8955a", color: "#2a1208" },
+        sectionDark: { bg: "#bc985b", color: "#2a1208" },
         sectionMid: { bg: "#3d1f0d", color: "#c8a96e" },
-        sectionAccent: { bg: "rgb(253, 240, 204)", color: "#3d1f0d" },
-        inlineNav: { bg: "#9c7a42", color: "#f2e9d0" },
+        sectionAccent: { bg: "#e9d7a6", color: "#3d1f0d" },
+        inlineNav: { bg: "#705427", color: "#fcf2d4" },
     },
 ];
 
@@ -302,6 +302,40 @@ console.log(
     "%c👀 Nosy? Check out the repo:\nhttps://github.com/dontdevpanic/darkground-coffee",
     "font-size: 0.85rem; color: #c8a96e; background: #1a0c05; padding: 8px 16px;"
 );
+
+// ══════════════════════════════════════════════
+//  SCROLL SPY
+//
+//  Observes original sections only (skips .is-clone).
+//  When a section is ≥ 20% visible, its matching nav
+//  link gets class "is-active". Only one link active at a time.
+//
+//  IDs exist 3× in DOM — we only track originals here,
+//  so the header always reflects the real current section.
+// ══════════════════════════════════════════════
+
+const navLinks = document.querySelectorAll(".header-nav a[href^='#']");
+
+function setActiveLink(id) {
+    navLinks.forEach(link => {
+        const isActive = link.getAttribute("href") === `#${id}`;
+        link.classList.toggle("is-active", isActive);
+    });
+}
+
+const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+        }
+    });
+}, { threshold: 0.2 });
+
+// Only observe originals — clones have no IDs we want to track
+originals.forEach(el => {
+    if (el.id) spyObserver.observe(el);
+});
+
 
 // ══════════════════════════════════════════════
 //  MOBILE NAV TOGGLE
