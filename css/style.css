@@ -537,6 +537,7 @@ body.intro-active .hero-brand {
     height: 28px;
     width: auto;
     flex-shrink: 0;
+    transform: translateY(-2px);
 }
 
 /* ==== TICKER ==== */
