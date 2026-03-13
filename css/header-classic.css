@@ -226,7 +226,8 @@ p {
 
 .hero-svg {
     width: clamp(60px, 6vw, 80px);
-    height: auto;
+    height: clamp(156px, 15.6vw, 208px);
+    overflow: visible;
 }
 
 .hero-title {
