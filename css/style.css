@@ -31,6 +31,8 @@
     /* Hero-colors — Loops are changed via JS */
     --hero-bg: var(--espresso);
     --hero-color: var(--creme);
+
+    --footer-height: 40px;
 }
 
 /* ==== RESET / BASE ==== */
@@ -51,7 +53,7 @@ body {
     font-family: var(--body-font);
     background: var(--espresso);
     color: var(--creme);
-    padding-bottom: 40px;
+    padding-bottom: var(--footer-height);
     /* Place for fixed footer */
 }
 
@@ -849,7 +851,8 @@ body.intro-active .hero-brand {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
+    min-height: 40px;
+    padding: 0.6rem 1rem;
     background: rgba(61, 31, 13, 0.85);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(242, 233, 208, 0.08);
@@ -900,6 +903,11 @@ body.intro-active .hero-brand {
 /* ==== MEDIA QUERIES ==== */
 
 @media screen and (max-width: 576px) {
+
+    :root {
+        --footer-height: 80px;
+    }
+
     .inline-nav {
         gap: 1rem;
     }
@@ -907,4 +915,11 @@ body.intro-active .hero-brand {
     .body-text {
         font-size: 1rem;
     }
+
+    .footer-nav {
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
 }
